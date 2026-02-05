@@ -1,0 +1,416 @@
+<!-- ========================= -->
+<!-- Question 1: Basic HTML Document -->
+<!-- ========================= -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>The First Page</title>
+</head>
+
+<body>
+
+    Hello World
+
+</body>
+
+</html>
+
+
+
+<!-- ========================= -->
+<!-- Question 2: Static Webpage using Table -->
+<!-- ========================= -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Student Table</title>
+</head>
+
+<body>
+
+    <h2>Student Information</h2>
+
+    <table border="1">
+
+        <tr>
+            <th>Roll No</th>
+            <th>Name</th>
+            <th>Course</th>
+        </tr>
+
+        <tr>
+            <td>101</td>
+            <td>Ritik</td>
+            <td>B.Tech</td>
+        </tr>
+
+        <tr>
+            <td>102</td>
+            <td>Harshit</td>
+            <td>BCA</td>
+        </tr>
+
+        <tr>
+            <td>103</td>
+            <td>Aman</td>
+            <td>BBA</td>
+        </tr>
+
+    </table>
+
+</body>
+
+</html>
+
+
+
+<!-- ========================= -->
+<!-- Question 3: Text Formatting Tags in Table -->
+<!-- ========================= -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Formatting Tags</title>
+</head>
+
+<body>
+
+    <h2>HTML Formatting Tags</h2>
+
+    <table border="1">
+
+        <tr>
+            <th>Tag</th>
+            <th>Example</th>
+        </tr>
+
+        <tr>
+            <td>Bold</td>
+            <td><b>This is Bold Text</b></td>
+        </tr>
+
+        <tr>
+            <td>Italic</td>
+            <td><i>This is Italic Text</i></td>
+        </tr>
+
+        <tr>
+            <td>Underline</td>
+            <td><u>This is Underline Text</u></td>
+        </tr>
+
+        <tr>
+            <td>Strong</td>
+            <td><strong>Important Text</strong></td>
+        </tr>
+
+        <tr>
+            <td>Emphasis</td>
+            <td><em>Emphasized Text</em></td>
+        </tr>
+
+    </table>
+
+</body>
+
+</html>
+
+
+
+<!-- ========================= -->
+<!-- Question 4: Webpage using List Tags -->
+<!-- ========================= -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>HTML Lists</title>
+</head>
+
+<body>
+
+    <h2>Ordered List</h2>
+
+    <ol>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+    </ol>
+
+    <h2>Unordered List</h2>
+
+    <ul>
+        <li>Apple</li>
+        <li>Banana</li>
+        <li>Mango</li>
+    </ul>
+
+    <h2>Description List</h2>
+
+    <dl>
+        <dt>HTML</dt>
+        <dd>HyperText Markup Language</dd>
+
+        <dt>CSS</dt>
+        <dd>Cascading Style Sheets</dd>
+    </dl>
+
+</body>
+
+</html>
+
+
+
+<!-- ========================= -->
+<!-- Question 5: Webpage to Display Image -->
+<!-- ========================= -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Image Example</title>
+</head>
+
+<body>
+
+    <h2>College Image</h2>
+
+    <img src="college.jpg" width="300" height="200">
+
+</body>
+
+</html>
+
+
+
+<!-- ========================= -->
+<!-- Question 6: Image as Link -->
+<!-- ========================= -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Image Link</title>
+</head>
+
+<body>
+
+    <h2>Click the Image</h2>
+
+    <a href="page2.html">
+        <img src="college.jpg" width="300">
+    </a>
+
+</body>
+
+</html>
+
+
+
+<!-- ========================= -->
+<!-- Question 7: Employee Registration Form -->
+<!-- ========================= -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Employee Registration Form</title>
+</head>
+
+<body>
+
+    <h2>Employee Registration</h2>
+
+    <form>
+
+        Name:
+        <input type="text"><br><br>
+
+        Email:
+        <input type="email"><br><br>
+
+        Password:
+        <input type="password"><br><br>
+
+        Gender:
+        <input type="radio" name="gender"> Male
+        <input type="radio" name="gender"> Female
+        <br><br>
+
+        Department:
+        <select>
+            <option>HR</option>
+            <option>IT</option>
+            <option>Finance</option>
+        </select>
+
+        <br><br>
+
+        Skills:
+        <input type="checkbox"> HTML
+        <input type="checkbox"> CSS
+        <input type="checkbox"> JavaScript
+
+        <br><br>
+
+        Address:
+        <textarea rows="4" cols="30"></textarea>
+
+        <br><br>
+
+        <input type="submit" value="Submit">
+
+    </form>
+
+</body>
+
+</html>
+
+
+
+<!-- ========================= -->
+<!-- Question 8: College Website Home Page -->
+<!-- ========================= -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>IET DAVV</title>
+</head>
+
+<body>
+
+    <h1>IET DAVV</h1>
+
+    <img src="college.jpg" width="100">
+
+    <br><br>
+
+    <a href="index.html">Home</a> |
+    <a href="academics.html">Academics</a> |
+    <a href="admission.html">Admission</a> |
+    <a href="gallery.html">Gallery</a>
+
+    <p>Welcome to IET DAVV Website.</p>
+
+</body>
+
+</html>
+
+
+
+<!-- ========================= -->
+<!-- Question 9: Tourism Website Home Page -->
+<!-- ========================= -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>City Tourism</title>
+</head>
+
+<body>
+
+    <h1>Welcome to Delhi Tourism</h1>
+
+    <a href="heritage.html">Heritage</a> |
+    <a href="hotel-booking.html">Hotel Booking</a> |
+    <a href="gallery.html">Gallery</a>
+
+    <p>Explore the beautiful heritage sites of the city.</p>
+
+</body>
+
+</html>
+
+
+
+<!-- ========================= -->
+<!-- Question 10: Personal Web Page -->
+<!-- ========================= -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My Profile</title>
+</head>
+
+<body>
+
+    <h1>Manas Yadav</h1>
+
+    <p>B.Tech Student</p>
+
+    <h2>Skills</h2>
+
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+    </ul>
+
+    <h2>Contact</h2>
+
+    <p>Email: manas@email.com</p>
+
+</body>
+
+</html>
+
+
+
+<!-- ========================= -->
+<!-- Question 11: Model Question Paper Web Page -->
+<!-- ========================= -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Model Question Paper</title>
+</head>
+
+<body>
+
+    <h2 align="center">MODEL QUESTION PAPER FOR SUMMATIVE TEST-II</h2>
+    <h3 align="center">MATHEMATICS</h3>
+    <h4 align="center">CLASS VIII</h4>
+
+    <p><b>Maximum Marks:</b> 20</p>
+
+    <h3>General Instructions</h3>
+
+    <ol>
+        <li>All questions are compulsory.</li>
+        <li>The question paper consists of 7 questions.</li>
+        <li>Section A contains questions of 2 marks.</li>
+        <li>Section B contains questions of 4 marks.</li>
+    </ol>
+
+    <h3>SECTION A</h3>
+
+    <p>Q1. What will be the product of (2x²)(22x³)(4x²)?</p>
+
+    <p>
+        (a) 8x⁶ <br>
+        (b) 8x⁸ <br>
+        (c) 6x⁵⁰ <br>
+        (d) 8x⁹
+    </p>
+
+</body>
+
+</html>
