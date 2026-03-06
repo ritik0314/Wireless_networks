@@ -1,0 +1,16 @@
+// JavaScript program to sort characters of a string alphabetically
+
+function sortString(str) {
+    // Convert string to array, sort it, then join back to string
+    let sorted = str.split('').sort().join('');
+    return sorted;
+}
+
+// Example string
+let text = "javascript";
+
+console.log("Original String:", text);
+
+let result = sortString(text);
+
+console.log("Sorted String:", result);

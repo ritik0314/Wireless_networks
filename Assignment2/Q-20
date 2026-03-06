@@ -1,0 +1,56 @@
+// JavaScript program to implement a stack
+
+class Stack {
+    constructor() {
+        this.items = [];
+    }
+
+    // Push element into stack
+    push(element) {
+        this.items.push(element);
+    }
+
+    // Pop element from stack
+    pop() {
+        if (this.items.length === 0) {
+            return "Stack is empty";
+        }
+        return this.items.pop();
+    }
+
+    // Check if element exists in stack
+    contains(element) {
+        for (let i = 0; i < this.items.length; i++) {
+            if (this.items[i] === element) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    // Display stack
+    display() {
+        console.log("Stack:", this.items);
+    }
+}
+
+// Create stack
+let stack = new Stack();
+
+// Push elements
+stack.push(10);
+stack.push(20);
+stack.push(30);
+stack.push(40);
+
+// Display stack
+stack.display();
+
+// Check if element exists
+let element = 30;
+
+if (stack.contains(element)) {
+    console.log(element + " is present in the stack.");
+} else {
+    console.log(element + " is not present in the stack.");
+}

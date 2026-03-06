@@ -1,0 +1,19 @@
+// JavaScript program to delete rollno property from an object
+
+// Sample object
+var student = {
+    name: "David Rayy",
+    sclass: "VI",
+    rollno: 12
+};
+
+// Print object before deleting property
+console.log("Object before deleting rollno:");
+console.log(student);
+
+// Delete the rollno property
+delete student.rollno;
+
+// Print object after deleting property
+console.log("Object after deleting rollno:");
+console.log(student);

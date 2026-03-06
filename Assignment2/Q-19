@@ -1,0 +1,11 @@
+// JavaScript function to convert minutes into hours and minutes
+
+function timeConvert(num) {
+    let hours = Math.floor(num / 60);
+    let minutes = num % 60;
+
+    return num + " minutes = " + hours + " hour(s) and " + minutes + " minute(s).";
+}
+
+// Example
+console.log(timeConvert(200));

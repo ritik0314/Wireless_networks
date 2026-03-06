@@ -1,0 +1,17 @@
+
+
+function isNull(value) {
+    if (value === null) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+
+let value1 = null;
+let value2 = 10;
+
+
+console.log("Value1 is null:", isNull(value1));
+console.log("Value2 is null:", isNull(value2));

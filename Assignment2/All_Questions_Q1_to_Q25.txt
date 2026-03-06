@@ -1,0 +1,781 @@
+Q-1
+
+function findIndexes(str, word) {
+    let indexes = [];
+    let pos = str.indexOf(word);
+
+    
+    while (pos !== -1) {
+        indexes.push(pos);
+        pos = str.indexOf(word, pos + 1);
+    }
+
+    return indexes;
+}
+
+
+let text = "the cat and the dog chased the cat";
+let word = "cat";
+
+
+let result = findIndexes(text, word);
+
+
+console.log("String:", text);
+console.log("Word:", word);
+console.log("Index positions:", result);
+
+
+==================================================
+Q-2
+
+function linearSearch(arr, element) {
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === element) {
+            return i; 
+        }
+    }
+    return -1; 
+}
+
+
+let arr = [10, 25, 30, 45, 50];
+
+
+let element = 30;
+
+
+let index = linearSearch(arr, element);
+
+
+if (index !== -1) {
+    console.log("Element found at index:", index);
+} else {
+    console.log("Element not found in the array");
+}
+
+
+==================================================
+Q-3
+
+function quickSort(arr, left, right) {
+
+    if (left < right) {
+        let pivotIndex = partition(arr, left, right);
+
+        quickSort(arr, left, pivotIndex - 1);   
+        quickSort(arr, pivotIndex + 1, right); 
+    }
+
+    return arr;
+}
+
+function partition(arr, left, right) {
+    let pivot = arr[right];  
+    let i = left - 1;
+
+    for (let j = left; j < right; j++) {
+        if (arr[j] < pivot) {
+            i++;
+            [arr[i], arr[j]] = [arr[j], arr[i]]; 
+        }
+    }
+
+    [arr[i + 1], arr[right]] = [arr[right], arr[i + 1]]; 
+    return i + 1;
+}
+
+
+let arr = [34, 7, 23, 32, 5, 62];
+
+console.log("Original Array:", arr);
+
+quickSort(arr, 0, arr.length - 1);
+
+console.log("Sorted Array:", arr);
+
+
+==================================================
+Q-4
+
+function mergeSort(arr) {
+    if (arr.length <= 1) {
+        return arr;
+    }
+
+  
+    let mid = Math.floor(arr.length / 2);
+
+   
+    let left = arr.slice(0, mid);
+    let right = arr.slice(mid);
+
+    return merge(mergeSort(left), mergeSort(right));
+}
+
+function merge(left, right) {
+    let result = [];
+    let i = 0, j = 0;
+
+    
+    while (i < left.length && j < right.length) {
+        if (left[i] < right[j]) {
+            result.push(left[i]);
+            i++;
+        } else {
+            result.push(right[j]);
+            j++;
+        }
+    }
+
+   
+    return result
+        .concat(left.slice(i))
+        .concat(right.slice(j));
+}
+
+
+let arr = [38, 27, 43, 3, 9, 82, 10];
+
+console.log("Original Array:", arr);
+
+let sortedArray = mergeSort(arr);
+
+console.log("Sorted Array:", sortedArray);
+
+
+==================================================
+Q-5
+
+function heapSort(arr) {
+    let n = arr.length;
+
+    
+    for (let i = Math.floor(n / 2) - 1; i >= 0; i--) {
+        heapify(arr, n, i);
+    }
+
+    
+    for (let i = n - 1; i > 0; i--) {
+      
+        [arr[0], arr[i]] = [arr[i], arr[0]];
+
+      
+        heapify(arr, i, 0);
+    }
+
+    return arr;
+}
+
+function heapify(arr, n, i) {
+    let largest = i;
+    let left = 2 * i + 1;
+    let right = 2 * i + 2;
+
+   
+    if (left < n && arr[left] > arr[largest]) {
+        largest = left;
+    }
+
+    
+    if (right < n && arr[right] > arr[largest]) {
+        largest = right;
+    }
+
+    if (largest !== i) {
+        [arr[i], arr[largest]] = [arr[largest], arr[i]];
+        heapify(arr, n, largest);
+    }
+}
+
+
+let arr = [12, 11, 13, 5, 6, 7];
+
+console.log("Original Array:", arr);
+
+heapSort(arr);
+
+console.log("Sorted Array:", arr);
+
+
+==================================================
+Q-6
+
+function insertionSort(arr) {
+    let n = arr.length;
+
+    for (let i = 1; i < n; i++) {
+        let key = arr[i];
+        let j = i - 1;
+
+      
+        while (j >= 0 && arr[j] > key) {
+            arr[j + 1] = arr[j];
+            j--;
+        }
+
+        arr[j + 1] = key;
+    }
+
+    return arr;
+}
+
+
+let arr = [12, 11, 13, 5, 6];
+
+console.log("Original Array:", arr);
+
+insertionSort(arr);
+
+console.log("Sorted Array:", arr);
+
+
+==================================================
+Q-7
+
+function bubbleSort(arr) {
+    let n = arr.length;
+
+    for (let i = 0; i < n - 1; i++) {
+        for (let j = 0; j < n - i - 1; j++) {
+            
+            
+            if (arr[j] > arr[j + 1]) {
+                
+                let temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
+
+    return arr;
+}
+
+
+let arr = [64, 34, 25, 12, 22, 11, 90];
+
+console.log("Original Array:", arr);
+
+bubbleSort(arr);
+
+console.log("Sorted Array:", arr);
+
+
+==================================================
+Q-8
+
+// JavaScript program to sort characters of a string alphabetically
+
+function sortString(str) {
+    // Convert string to array, sort it, then join back to string
+    let sorted = str.split('').sort().join('');
+    return sorted;
+}
+
+// Example string
+let text = "javascript";
+
+console.log("Original String:", text);
+
+let result = sortString(text);
+
+console.log("Sorted String:", result);
+
+
+==================================================
+Q-9
+
+// JavaScript program to check if an array is sorted
+
+function isSorted(arr) {
+    for (let i = 0; i < arr.length - 1; i++) {
+        if (arr[i] > arr[i + 1]) {
+            return false; // array is not sorted
+        }
+    }
+    return true; // array is sorted
+}
+
+// Example array
+let arr = [10, 20, 30, 40, 50];
+
+console.log("Array:", arr);
+
+if (isSorted(arr)) {
+    console.log("The array is sorted.");
+} else {
+    console.log("The array is not sorted.");
+}
+
+
+==================================================
+Q-10
+
+function isNull(value) {
+    if (value === null) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+
+let value1 = null;
+let value2 = 10;
+
+
+console.log("Value1 is null:", isNull(value1));
+console.log("Value2 is null:", isNull(value2));
+
+
+==================================================
+Q-11
+
+// JavaScript function to check if a value is a number
+
+function isNumber(value) {
+    if (typeof value === "number" && !isNaN(value)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+// Example values
+let value1 = 25;
+let value2 = "Hello";
+let value3 = NaN;
+
+// Function calls
+console.log("Value1 is number:", isNumber(value1));
+console.log("Value2 is number:", isNumber(value2));
+console.log("Value3 is number:", isNumber(value3));
+
+
+==================================================
+Q-12
+
+// JavaScript function to check if a value is RegExp
+
+function isRegExp(value) {
+    if (value instanceof RegExp) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+// Example values
+let value1 = /abc/;
+let value2 = "hello";
+
+// Function calls
+console.log("Value1 is RegExp:", isRegExp(value1));
+console.log("Value2 is RegExp:", isRegExp(value2));
+
+
+==================================================
+Q-13
+
+// JavaScript program to delete rollno property from an object
+
+// Sample object
+var student = {
+    name: "David Rayy",
+    sclass: "VI",
+    rollno: 12
+};
+
+// Print object before deleting property
+console.log("Object before deleting rollno:");
+console.log(student);
+
+// Delete the rollno property
+delete student.rollno;
+
+// Print object after deleting property
+console.log("Object after deleting rollno:");
+console.log(student);
+
+
+==================================================
+Q-14
+
+// JavaScript program to display reading status of books
+
+var library = [
+{
+    author: 'Bill Gates',
+    title: 'The Road Ahead',
+    readingStatus: true
+},
+{
+    author: 'Steve Jobs',
+    title: 'Walter Isaacson',
+    readingStatus: true
+},
+{
+    author: 'Suzanne Collins',
+    title: 'Mockingjay: The Final Book of The Hunger Games',
+    readingStatus: false
+}
+];
+
+// Loop through library array
+for (var i = 0; i < library.length; i++) {
+
+    console.log("Book Name: " + library[i].title);
+    console.log("Author: " + library[i].author);
+    console.log("Reading Status: " + library[i].readingStatus);
+    console.log("----------------------------");
+}
+
+
+==================================================
+Q-15
+
+// JavaScript program to create a clock
+
+function showTime() {
+    let now = new Date();
+
+    let hours = now.getHours();
+    let minutes = now.getMinutes();
+    let seconds = now.getSeconds();
+
+    // Format time as HH:MM:SS
+    let time = hours + ":" + minutes + ":" + seconds;
+
+    console.log(time);
+}
+
+// Run the function every second
+setInterval(showTime, 1000);
+
+
+==================================================
+Q-16
+
+// JavaScript function to parse a URL
+
+function parseURL(url) {
+    let urlObj = new URL(url);
+
+    console.log("Full URL:", url);
+    console.log("Protocol:", urlObj.protocol);
+    console.log("Host:", urlObj.host);
+    console.log("Hostname:", urlObj.hostname);
+    console.log("Port:", urlObj.port);
+    console.log("Path:", urlObj.pathname);
+    console.log("Query:", urlObj.search);
+    console.log("Hash:", urlObj.hash);
+}
+
+// Example URL
+let url = "https://www.example.com:8080/path/page.html?name=John&id=101#section1";
+
+parseURL(url);
+
+
+==================================================
+Q-17
+
+// JavaScript function to split a string into an array of words
+
+function stringToArray(str) {
+    let words = str.split(" ");
+    return words;
+}
+
+// Example string
+let text = "JavaScript is a powerful programming language";
+
+// Function call
+let result = stringToArray(text);
+
+// Output
+console.log("Original String:", text);
+console.log("Array of Words:", result);
+
+
+==================================================
+Q-18
+
+// JavaScript function to swap case of letters
+
+function swapCase(str) {
+    let result = "";
+
+    for (let i = 0; i < str.length; i++) {
+        let ch = str[i];
+
+        if (ch === ch.toUpperCase()) {
+            result += ch.toLowerCase();
+        } else {
+            result += ch.toUpperCase();
+        }
+    }
+
+    return result;
+}
+
+// Example string
+let text = "JavaScript Programming";
+
+console.log("Original String:", text);
+
+let output = swapCase(text);
+
+console.log("Converted String:", output);
+
+
+==================================================
+Q-19
+
+// JavaScript function to convert minutes into hours and minutes
+
+function timeConvert(num) {
+    let hours = Math.floor(num / 60);
+    let minutes = num % 60;
+
+    return num + " minutes = " + hours + " hour(s) and " + minutes + " minute(s).";
+}
+
+// Example
+console.log(timeConvert(200));
+
+
+==================================================
+Q-20
+
+// JavaScript program to implement a stack
+
+class Stack {
+    constructor() {
+        this.items = [];
+    }
+
+    // Push element into stack
+    push(element) {
+        this.items.push(element);
+    }
+
+    // Pop element from stack
+    pop() {
+        if (this.items.length === 0) {
+            return "Stack is empty";
+        }
+        return this.items.pop();
+    }
+
+    // Check if element exists in stack
+    contains(element) {
+        for (let i = 0; i < this.items.length; i++) {
+            if (this.items[i] === element) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    // Display stack
+    display() {
+        console.log("Stack:", this.items);
+    }
+}
+
+// Create stack
+let stack = new Stack();
+
+// Push elements
+stack.push(10);
+stack.push(20);
+stack.push(30);
+stack.push(40);
+
+// Display stack
+stack.display();
+
+// Check if element exists
+let element = 30;
+
+if (stack.contains(element)) {
+    console.log(element + " is present in the stack.");
+} else {
+    console.log(element + " is not present in the stack.");
+}
+
+
+==================================================
+Q-21
+
+// Node class
+class Node {
+    constructor(data) {
+        this.data = data;
+        this.next = null;
+    }
+}
+
+// Linked List class
+class LinkedList {
+    constructor() {
+        this.head = null;
+    }
+
+    // Function to check if linked list is empty
+    isEmpty() {
+        if (this.head === null) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+}
+
+// Create linked list
+let list = new LinkedList();
+
+// Check if list is empty
+console.log("Is Linked List Empty? ", list.isEmpty());
+
+// Add a node
+list.head = new Node(10);
+
+// Check again
+console.log("Is Linked List Empty? ", list.isEmpty());
+
+
+==================================================
+Q-22
+
+// JavaScript program for Rectangle class
+
+class Rectangle {
+    constructor(width, height) {
+        this.width = width;
+        this.height = height;
+    }
+
+    // Method to calculate area
+    area() {
+        return this.width * this.height;
+    }
+
+    // Method to calculate perimeter
+    perimeter() {
+        return 2 * (this.width + this.height);
+    }
+}
+
+// Create an instance of Rectangle
+let rect = new Rectangle(10, 5);
+
+// Display results
+console.log("Width:", rect.width);
+console.log("Height:", rect.height);
+console.log("Area of Rectangle:", rect.area());
+console.log("Perimeter of Rectangle:", rect.perimeter());
+
+
+==================================================
+Q-23
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Image Slideshow</title>
+</head>
+<body>
+
+<h2>Image Slideshow</h2>
+
+<img id="slide" src="image1.jpg" width="400" height="250">
+
+<br><br>
+
+<button onclick="prevImage()">Previous</button>
+<button onclick="nextImage()">Next</button>
+
+<script>
+
+// Image list
+let images = [
+    "image1.jpg",
+    "image2.jpg",
+    "image3.jpg",
+    "image4.jpg"
+];
+
+let index = 0;
+
+// Show next image
+function nextImage() {
+    index++;
+    if(index >= images.length) {
+        index = 0;
+    }
+    document.getElementById("slide").src = images[index];
+}
+
+// Show previous image
+function prevImage() {
+    index--;
+    if(index < 0) {
+        index = images.length - 1;
+    }
+    document.getElementById("slide").src = images[index];
+}
+
+</script>
+
+</body>
+</html>
+
+
+==================================================
+Q-24
+
+// JavaScript program to handle SyntaxError while parsing JSON
+
+let jsonString = '{ "name": "John", "age": 30, }'; // Invalid JSON (extra comma)
+
+try {
+    let data = JSON.parse(jsonString);  // Attempt to parse JSON
+    console.log("Parsed Data:", data);
+}
+catch (error) {
+    if (error instanceof SyntaxError) {
+        console.log("SyntaxError caught while parsing JSON:");
+        console.log(error.message);
+    } else {
+        console.log("An unexpected error occurred:", error);
+    }
+}
+
+
+==================================================
+Q-25
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Redirect Example</title>
+
+<script>
+// Function to redirect to another page
+function redirectPage() {
+    window.location.href = "https://www.google.com";
+}
+</script>
+
+</head>
+<body>
+
+<h2>Click the button to redirect</h2>
+
+<button onclick="redirectPage()">Go to Google</button>
+
+</body>
+</html>

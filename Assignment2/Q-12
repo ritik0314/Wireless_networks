@@ -1,0 +1,17 @@
+// JavaScript function to check if a value is RegExp
+
+function isRegExp(value) {
+    if (value instanceof RegExp) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+// Example values
+let value1 = /abc/;
+let value2 = "hello";
+
+// Function calls
+console.log("Value1 is RegExp:", isRegExp(value1));
+console.log("Value2 is RegExp:", isRegExp(value2));

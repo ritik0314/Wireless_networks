@@ -1,0 +1,19 @@
+// JavaScript function to check if a value is a number
+
+function isNumber(value) {
+    if (typeof value === "number" && !isNaN(value)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+// Example values
+let value1 = 25;
+let value2 = "Hello";
+let value3 = NaN;
+
+// Function calls
+console.log("Value1 is number:", isNumber(value1));
+console.log("Value2 is number:", isNumber(value2));
+console.log("Value3 is number:", isNumber(value3));

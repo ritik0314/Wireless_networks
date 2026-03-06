@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Redirect Example</title>
+
+<script>
+// Function to redirect to another page
+function redirectPage() {
+    window.location.href = "https://www.google.com";
+}
+</script>
+
+</head>
+<body>
+
+<h2>Click the button to redirect</h2>
+
+<button onclick="redirectPage()">Go to Google</button>
+
+</body>
+</html>

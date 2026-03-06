@@ -1,0 +1,26 @@
+// JavaScript function to swap case of letters
+
+function swapCase(str) {
+    let result = "";
+
+    for (let i = 0; i < str.length; i++) {
+        let ch = str[i];
+
+        if (ch === ch.toUpperCase()) {
+            result += ch.toLowerCase();
+        } else {
+            result += ch.toUpperCase();
+        }
+    }
+
+    return result;
+}
+
+// Example string
+let text = "JavaScript Programming";
+
+console.log("Original String:", text);
+
+let output = swapCase(text);
+
+console.log("Converted String:", output);

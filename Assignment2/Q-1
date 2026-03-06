@@ -1,0 +1,26 @@
+
+
+function findIndexes(str, word) {
+    let indexes = [];
+    let pos = str.indexOf(word);
+
+    
+    while (pos !== -1) {
+        indexes.push(pos);
+        pos = str.indexOf(word, pos + 1);
+    }
+
+    return indexes;
+}
+
+
+let text = "the cat and the dog chased the cat";
+let word = "cat";
+
+
+let result = findIndexes(text, word);
+
+
+console.log("String:", text);
+console.log("Word:", word);
+console.log("Index positions:", result);

@@ -1,0 +1,19 @@
+// JavaScript function to parse a URL
+
+function parseURL(url) {
+    let urlObj = new URL(url);
+
+    console.log("Full URL:", url);
+    console.log("Protocol:", urlObj.protocol);
+    console.log("Host:", urlObj.host);
+    console.log("Hostname:", urlObj.hostname);
+    console.log("Port:", urlObj.port);
+    console.log("Path:", urlObj.pathname);
+    console.log("Query:", urlObj.search);
+    console.log("Hash:", urlObj.hash);
+}
+
+// Example URL
+let url = "https://www.example.com:8080/path/page.html?name=John&id=101#section1";
+
+parseURL(url);

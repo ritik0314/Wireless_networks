@@ -1,0 +1,21 @@
+// JavaScript program to check if an array is sorted
+
+function isSorted(arr) {
+    for (let i = 0; i < arr.length - 1; i++) {
+        if (arr[i] > arr[i + 1]) {
+            return false; // array is not sorted
+        }
+    }
+    return true; // array is sorted
+}
+
+// Example array
+let arr = [10, 20, 30, 40, 50];
+
+console.log("Array:", arr);
+
+if (isSorted(arr)) {
+    console.log("The array is sorted.");
+} else {
+    console.log("The array is not sorted.");
+}

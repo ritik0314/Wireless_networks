@@ -1,0 +1,35 @@
+// Node class
+class Node {
+    constructor(data) {
+        this.data = data;
+        this.next = null;
+    }
+}
+
+// Linked List class
+class LinkedList {
+    constructor() {
+        this.head = null;
+    }
+
+    // Function to check if linked list is empty
+    isEmpty() {
+        if (this.head === null) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+}
+
+// Create linked list
+let list = new LinkedList();
+
+// Check if list is empty
+console.log("Is Linked List Empty? ", list.isEmpty());
+
+// Add a node
+list.head = new Node(10);
+
+// Check again
+console.log("Is Linked List Empty? ", list.isEmpty());

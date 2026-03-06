@@ -1,0 +1,16 @@
+// JavaScript function to split a string into an array of words
+
+function stringToArray(str) {
+    let words = str.split(" ");
+    return words;
+}
+
+// Example string
+let text = "JavaScript is a powerful programming language";
+
+// Function call
+let result = stringToArray(text);
+
+// Output
+console.log("Original String:", text);
+console.log("Array of Words:", result);

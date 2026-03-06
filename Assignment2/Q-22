@@ -1,0 +1,27 @@
+// JavaScript program for Rectangle class
+
+class Rectangle {
+    constructor(width, height) {
+        this.width = width;
+        this.height = height;
+    }
+
+    // Method to calculate area
+    area() {
+        return this.width * this.height;
+    }
+
+    // Method to calculate perimeter
+    perimeter() {
+        return 2 * (this.width + this.height);
+    }
+}
+
+// Create an instance of Rectangle
+let rect = new Rectangle(10, 5);
+
+// Display results
+console.log("Width:", rect.width);
+console.log("Height:", rect.height);
+console.log("Area of Rectangle:", rect.area());
+console.log("Perimeter of Rectangle:", rect.perimeter());
